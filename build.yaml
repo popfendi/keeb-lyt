@@ -12,8 +12,10 @@
 #     shield: reviung41
 #
 ---
+# ZMK on Zephyr 4.1 (Dec 2025) requires the //zmk board variant:
+# nice_nano_v2 -> nice_nano@2.0.0//zmk
 include:
-  - board: nice_nano_v2
+  - board: nice_nano@2.0.0//zmk
     shield: corne_left nice_view_adapter nice_view
-  - board: nice_nano_v2
+  - board: nice_nano@2.0.0//zmk
     shield: corne_right nice_view_adapter nice_view
