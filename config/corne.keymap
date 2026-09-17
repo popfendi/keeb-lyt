@@ -55,6 +55,31 @@
                 <&kp MACRO_PLACEHOLDER>;
         };
 
+        // helix: `[` + key / `]` + key  (prev / next hunk, function, paragraph ...)
+        hxp: helix_prev {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            wait-ms = <20>;
+            tap-ms = <20>;
+            bindings =
+                <&macro_tap>,
+                <&kp LBKT>,
+                <&macro_param_1to1>,
+                <&kp MACRO_PLACEHOLDER>;
+        };
+
+        hxn: helix_next {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            wait-ms = <20>;
+            tap-ms = <20>;
+            bindings =
+                <&macro_tap>,
+                <&kp RBKT>,
+                <&macro_param_1to1>,
+                <&kp MACRO_PLACEHOLDER>;
+        };
+
         prevTab: prevTab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
