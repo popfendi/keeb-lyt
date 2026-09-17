@@ -212,18 +212,19 @@
             // Hold left outer thumb (TAB). Each key = tmux prefix + letter (see ~/.config/tmux/tmux.conf)
             // -----------------------------------------------------------------------------------------
             // |      |CHEAT|CLOSE|     |RENAM| NEW |   |     |PREV |  ↑  |NEXT |     |      |
-            // |      |     |SPL= |     |     | GIT |   |     |  ←  |  ↓  |  →  |     |      |
-            // |      |     |     |     |SPL| |     |   |     |     |     |     |     |      |
+            // |      | [p  |SPL= | GIT |     | [g  |   | ]g  |  ←  |  ↓  |  →  | ]p  |      |
+            // |      |     |     |     |SPL| | [f  |   | ]f  |     |     |     |     |      |
             //                    |HELD |     |     |   |     |     |ZOOM |
-            //   CLOSE = kill pane (closes the tab if it's the last pane)   NEW = new window/tab
-            //   SPL=  = stacked split   SPL| = side-by-side split   ZOOM (Enter) = toggle pane zoom
-            //   CHEAT = open the shortcut cheatsheet in a new tab
+            //   tmux:  CLOSE = kill pane (closes the tab if it's the last pane)   NEW = new window/tab
+            //          SPL=  = stacked split   SPL| = side-by-side split   ZOOM (Enter) = toggle pane zoom
+            //          CHEAT = shortcut cheatsheet in a new tab   GIT = lazygit popup
+            //   helix: [g ]g prev/next git hunk   [f ]f prev/next function   [p ]p prev/next paragraph
 
             bindings = <
-&trans  &tm SLASH  &tm X  &none  &tm COMMA  &tm C    &none  &tm P  &tm K  &tm N  &none  &trans
-&trans  &none  &tm S  &none  &none      &tm G    &none  &tm H  &tm J  &tm L  &none  &trans
-&trans  &none  &none  &none  &tm V      &none    &none  &none  &none  &none  &none  &trans
-                      &trans &trans     &trans   &trans &trans &tm Z
+&trans  &tm SLASH  &tm X  &none  &tm COMMA  &tm C    &none   &tm P  &tm K  &tm N  &none   &trans
+&trans  &hxp P     &tm S  &tm G  &none      &hxp G   &hxn G  &tm H  &tm J  &tm L  &hxn P  &trans
+&trans  &none      &none  &none  &tm V      &hxp F   &hxn F  &none  &none  &none  &none   &trans
+                          &trans &trans     &trans   &trans  &trans &tm Z
             >;
         };
     };
